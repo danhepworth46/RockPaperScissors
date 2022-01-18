@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="style.css">
+<!--Google Fonts-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
+<!--HTML-->
+<html>
+<header>
+Welcome to... Rock, Paper, Scissors.
+</header>
+
+<h1 class="playerScore">Player Score: </h1><h1 class="player">0</h1>
+<h1 class="computerScore">Computer Score: </h1><h1 class="computer">0</h1>
+
+<body>
+</body>
+
+<!--CSS-->
+<style>
+html{
+    scroll-behavior: smooth;
+
+}
+
+header{
+    font-size: 200px;
+    font-family: ZCOOL QingKe HuangYou;
+}
+
+
+.computerScore{
+    font-size: 50px;
+    font-family: ZCOOL QingKe HuangYou;
+color: red;
+}
+
+.playerScore{
+    font-size: 50px;
+    font-family: ZCOOL QingKe HuangYou;
+color: blue;
+}
+</style>
+
+<!--javaScript-->
+<script>
+function computerPlay(random){
+   random = Math.random()
+if (random <= 0.33){
+    return "rock";
+}else if (random > 0.33 && random <= 0.66){
+    return "paper";
+}else {
+    return "scissors"
+}};
+
+function playRound(playerSelection, computerSelection){
+
+computerSelection = computerPlay();
+playerSelection = prompt("Choose rock, paper or scissors");
+alert("The computer has selected " + computerSelection + ".");
+
+let myRegexOne = /rock/i;
+let myRegexTwo = /paper/i;
+let myRegexThree = /scissors/i;
+
+    if(playerSelection.match(myRegexOne) && computerSelection === "scissors"){
+       return "You win! Rock beats scissors.";
+    }else if (playerSelection.match(myRegexThree) && computerSelection === "paper"){
+       return "You win! Scissors beats paper.";
+    }else if (playerSelection.match(myRegexTwo) && computerSelection === "rock"){
+       return "You win! Paper beats rock.";
+    }else if (playerSelection.match(myRegexTwo) && computerSelection === "scissors"){
+       return "You lose! Scissors beats paper.";
+    }else if (playerSelection.match(myRegexThree) && computerSelection === "rock"){
+       return "You lose! Rock beats scissors.";
+    }else if (playerSelection.match(myRegexOne) && computerSelection === "paper"){
+       return "You lose! Paper beats rock.";
+    }else if (playerSelection.match(myRegexOne) && computerSelection === "rock"){
+       return "It's a draw!";
+    }else if (playerSelection.match(myRegexThree) && computerSelection === "scissors" ){
+       return "It's a draw!";
+    }else if (playerSelection.match(myRegexTwo) && computerSelection === "paper"){
+       return "It's a draw!";
+     }else{
+       return "Please enter a valid argument.";
+
+}
+}
+
+function game(result){
+result = playRound();
+alert(result);  //this logs the return statement from playRound().
+if (result === "You win! Rock beats scissors." || result === "You win! Scissors beats paper." || result === "You win! Paper beats rock."){
+return "The player has won this game.";
+}else if (result === "You lose! Scissors beats paper." || result === "You lose! Rock beats scissors." || result === "You lose! Paper beats rock."){
+return "The computer has won this game.";
+}else if (result === "It's a draw!"){
+return "Play Again.";
+}else{
+return "Error!";
+}}
+
+let player = 0;
+let computer = 0;
+
+function score(winner){
+winner = game();
+alert(winner); //this logs the return statment from game().
+
+let playerWin = player+1;
+let computerWin = computer+1;
+
+if (winner === "The player has won this game."){
+player++;
+return alert("The player has " + playerWin + " win(s).");
+    }else if (winner === "The computer has won this game."){
+computer++;
+return alert("The computer has " + computerWin + " win(s).");
+}else{
+return alert("No one won this game!");
+}
+}
+
+
+console.log(score()); //this plays the function playRound(), returns game() and score().
+console.log(score());
+console.log(score());
+console.log(score());
+console.log(score());
+</script>
+
+</html>
