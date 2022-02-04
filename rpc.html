@@ -8,13 +8,13 @@
 <html>
 <header>
 Welcome to... Rock, Paper, Scissors.
-It's the game of games.
 </header>
 
-<h1 class="playerScore">Player Score: </h1><h1 class="player">0</h1>
-<h1 class="computerScore">Computer Score: </h1><h1 class="computer">0</h1>
+<h1 class="playerScore">Player Score -</h1><h1 id="player">0</h1>
+<h1 class="computerScore">Computer Score -</h1><h1 id="computer">0</h1>
 
 <body>
+   <button id="btn">Play Here!</button>
 </body>
 
 <!--CSS-->
@@ -25,21 +25,71 @@ html{
 }
 
 header{
-    font-size: 200px;
+    font-size: 150px;
     font-family: ZCOOL QingKe HuangYou;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+margin: auto;
 }
 
 
 .computerScore{
-    font-size: 50px;
+   margin-top: 0px; 
+   font-size: 80px;
     font-family: ZCOOL QingKe HuangYou;
 color: red;
+justify-content: center;
+display: flex;
 }
 
 .playerScore{
-    font-size: 50px;
+   margin-top: 50px; 
+    font-size: 80px;
     font-family: ZCOOL QingKe HuangYou;
 color: blue;
+justify-content: center;
+display: flex;
+
+}
+
+#btn{
+   display: flex;
+   padding: 50px;
+   font-family: ZCOOL QingKe HuangYou;
+   font-size: 60px;
+   border: 0px solid black;
+border-radius: 50px;
+background-color: yellow;
+display: flex;
+justify-content: center;
+text-align: center;
+margin: auto;
+}
+
+#btn:hover{
+   background-color: orange;
+}
+
+#player 
+{
+   font-size: 50px;
+   font-family: ZCOOL QingKe HuangYou;
+  margin-top: -110px;
+  padding-left: 600px;
+  justify-content: center;
+  display: flex;
+  
+}
+
+#computer 
+{
+   font-size: 50px;
+   font-family: ZCOOL QingKe HuangYou;
+   margin-top: -110px;
+  padding-left: 600px;
+  justify-content: center;
+  display: flex;
 }
 </style>
 
@@ -124,11 +174,10 @@ return alert("No one won this game!");
 }
 
 
-console.log(score()); //this plays the function playRound(), returns game() and score().
-console.log(score());
-console.log(score());
-console.log(score());
-console.log(score());
+
+btn.addEventListener('click', score); //this plays the function score() when an event click occurs on the button.
+
+
 </script>
 
 </html>
