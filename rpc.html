@@ -14,7 +14,13 @@ Welcome to... Rock, Paper, Scissors.
 <h1 class="computerScore">Computer Score -</h1><h1 id="computer">0</h1>
 
 <body>
-   <button id="btn">Play Here!</button>
+   <div class="btn-wrapper">
+<button class="rock-btn">Rock</button>
+<button class="paper-btn">Paper</button>
+<button class="scissors-btn">Scissors</button>
+</div>
+
+   <!-- <button id="btn">Play Here!</button> -->
 </body>
 
 <!--CSS-->
@@ -53,7 +59,7 @@ display: flex;
 
 }
 
-#btn{
+/* #btn{
    display: flex;
    padding: 50px;
    font-family: ZCOOL QingKe HuangYou;
@@ -65,9 +71,65 @@ display: flex;
 justify-content: center;
 text-align: center;
 margin: auto;
+} */
+
+.btn-wrapper{
+   display: flex;
+   flex-direction: row;
 }
 
-#btn:hover{
+.rock-btn
+{
+   padding: 50px;
+   font-family: ZCOOL QingKe HuangYou;
+   font-size: 60px;
+   border: 0px solid black;
+border-radius: 50px;
+background-color: yellow;
+display: flex;
+justify-content: center;
+text-align: center;
+margin: auto;
+width: 400px;
+margin-bottom: 40px;
+}
+
+.paper-btn{
+   padding: 50px;
+   font-family: ZCOOL QingKe HuangYou;
+   font-size: 60px;
+   border: 0px solid black;
+border-radius: 50px;
+background-color: yellow;
+display: flex;
+justify-content: center;
+text-align: center;
+margin: auto;
+width: 400px;
+margin-bottom: 40px;
+
+}
+
+.scissors-btn{
+   padding: 50px;
+   font-family: ZCOOL QingKe HuangYou;
+   font-size: 60px;
+   border: 0px solid black;
+border-radius: 50px;
+background-color: yellow;
+display: flex;
+justify-content: center;
+text-align: center;
+margin: auto;
+width: 400px;
+margin-bottom: 40px;
+}
+
+/* #btn:hover{
+   background-color: orange;
+} */
+
+.new-hover-styles{
    background-color: orange;
 }
 
@@ -95,20 +157,31 @@ margin: auto;
 
 <!--javaScript-->
 <script>
+function playerPlay(e){console.log(e.target);
+   if (e.target === rockBtn){
+      return "rock";
+   }else if (e.target === paperBtn){
+      return "paper";
+   }else{
+      return "scissors";
+   }
+}
+
 function computerPlay(random){
-   random = Math.random()
-if (random <= 0.33){
+random = Math.random();
+   if (random <= 0.33){
     return "rock";
 }else if (random > 0.33 && random <= 0.66){
     return "paper";
 }else {
-    return "scissors"
+    return "scissors";
 }};
+
 
 function playRound(playerSelection, computerSelection){
 
 computerSelection = computerPlay();
-playerSelection = prompt("Choose rock, paper or scissors");
+playerSelection = playerPlay;
 alert("The computer has selected " + computerSelection + ".");
 
 let myRegexOne = /rock/i;
@@ -172,10 +245,31 @@ return alert("The computer has " + computerWin + " win(s).");
 return alert("No one won this game!");
 }
 }
+ 
+ let rockBtn = document.querySelector('.rock-btn')
+ let paperBtn = document.querySelector('.paper-btn')
+ let scissorsBtn = document.querySelector('.scissors-btn')
+ let btnWrap = document.querySelector('.btn-wrapper')
+
+ function hoverColor (e){
+e.target.classList.add('new-hover-styles');
+ }
+
+//  function removeBtnColor (e){
+//   e.target.classList.remove('new-hover-styles');
+//  }
+
+rockBtn.addEventListener('click', playerPlay);
+paperBtn.addEventListener('click', playerPlay);
+scissorsBtn.addEventListener('click', playerPlay);
+
+rockBtn.addEventListener('mouseover', hoverColor);
+paperBtn.addEventListener('mouseover', hoverColor);
+scissorsBtn.addEventListener('mouseover', hoverColor);
+// window.addEventListener('mouseover', removeBtnColor)
 
 
-
-btn.addEventListener('click', score); //this plays the function score() when an event click occurs on the button.
+btnWrap.addEventListener('click', score); //this plays the function score() when an event click occurs on the button.
 
 
 </script>
