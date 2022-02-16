@@ -1,0 +1,163 @@
+html{
+    scroll-behavior: smooth;
+}
+
+.header-text{
+    font-size: 150px;
+    font-family: ZCOOL QingKe HuangYou;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+}
+
+#scores{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly; 
+   
+}
+
+.computerScore{ 
+    font-size: 80px;
+    font-family: ZCOOL QingKe HuangYou;
+    color: red;
+    
+}
+
+.playerScore{
+    font-size: 80px;
+    font-family: ZCOOL QingKe HuangYou;
+    color: blue;
+}
+
+#player{
+    font-size: 80px;
+    font-family: ZCOOL QingKe HuangYou;
+}
+
+#computer{
+    font-size: 80px;
+    font-family: ZCOOL QingKe HuangYou;
+}
+
+h2{
+    font-family: ZCOOL QingKe HuangYou;
+    margin-left: 40px;
+}
+
+.btn-wrapper{
+    display: flex;
+    flex-direction: row;
+}
+
+.rock-btn{
+    padding: 50px;
+    font-family: ZCOOL QingKe HuangYou;
+    font-size: 60px;
+    border: 0px solid black;
+    border-radius: 50px;    
+    background-color: yellow;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    width: 400px;
+    margin-bottom: 40px;
+}
+
+.paper-btn{
+    padding: 50px;
+    font-family: ZCOOL QingKe HuangYou;
+    font-size: 60px;
+    border: 0px solid black;
+    border-radius: 50px;
+    background-color: yellow;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    width: 400px;
+    margin-bottom: 40px;
+}
+
+.scissors-btn{
+    padding: 50px;
+    font-family: ZCOOL QingKe HuangYou;
+    font-size: 60px;
+    border: 0px solid black;
+    border-radius: 50px;
+    background-color: yellow;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    width: 400px;
+    margin-bottom: 40px;
+}
+
+.rock-img{
+    display: none;
+}
+
+.paper-img{
+    display: none;
+}
+
+.scissors-img{
+    display: none;
+}
+
+.scissors-btn:hover
+.scissors-img{
+    display: block;
+    width: 150px;
+    height: 100%;
+    margin-top: -100px;
+}
+
+.scissors-btn:hover{
+    background-color: white;
+    color: white;
+    font-size: 0px;
+}
+
+.paper-btn:hover
+.paper-img{
+    display: block;
+    width: 200px;
+    height: 100%;
+    margin-top: -100px;
+}
+
+.paper-btn:hover{
+    background-color: white;
+    color: white;
+    font-size: 0px;
+}
+
+
+.rock-btn:hover
+.rock-img{
+    display: block;
+    width: 200px;
+    height: 100%;
+    margin-top: -100px;
+}
+
+.rock-btn:hover{
+    background-color: white;
+    color: white;
+    font-size: 0px;
+}
+
+span{
+    animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker{
+    50%{
+        opacity: 0;
+    }
+}
+
