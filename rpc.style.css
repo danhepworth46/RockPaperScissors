@@ -136,7 +136,6 @@ h2{
     font-size: 0px;
 }
 
-
 .rock-btn:hover
 .rock-img{
     display: block;
@@ -150,6 +149,14 @@ h2{
     color: white;
     font-size: 0px;
 }
+
+/* @keyframes bounce{
+    50%{
+        margin-top: -500px;
+        width: 400px;
+        height: 100%;
+    }
+} */
 
 span{
     animation: blinker 1s linear infinite;

@@ -34,7 +34,7 @@ title.innerHTML = messageArray[0].substring(0, textPosition);
 function computerPlay(random){
 random = Math.random();
     if (random <= 0.33){
-        newText.textContent = "The computer has selected paper.";
+        newText.textContent = "The computer has selected rock.";
         return "The computer has selected rock.";
     }else if (random > 0.33 && random <= 0.66){
         newText.textContent = "The computer has selected paper.";
@@ -44,7 +44,6 @@ random = Math.random();
         return "The computer has selected scissors.";
 }
 }
-
 
 function playRock(computer){
 computer = computerPlay();
